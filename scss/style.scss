@@ -1,0 +1,570 @@
+@import "colores";
+@import "header";
+@import "footer";
+@import "productos";
+@import "map";
+
+$fuentePrincipal: 'Nunito', sans-serif;
+
+/*email dirigido*/
+#opacidad0{
+    opacity: 0;
+    width: 5px;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+/*REGLAS GENERALES*/
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $blanco;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    font-family: $fuentePrincipal;
+    width: 100%;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{display: none;}
+}
+
+p{
+    font-size: 1.8rem;
+    color: $negro;
+}
+
+a{
+    text-decoration: none;
+    color: $negro;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+h2{
+    font-size: 4rem;
+}
+
+
+.hero{
+    background-image: url(../img/costadooo.jpg);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    
+    .contenido-hero{
+        background-color: rgba(16, 24, 32, 0.89);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.logo-hero{
+  width: 75%;
+}
+
+.servicios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #eff5f5;
+
+    .titulo-servicios{
+    display: flex;
+    justify-content: center;
+    h2{
+        font-size: 3rem;
+    }
+}
+}
+
+@media(min-width:600px){
+  .titulo-servicios{padding-bottom: 2rem;;}
+}
+
+.contenedor-servicios{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+}
+
+.imagen-servicios{
+    width: 25%;
+
+}
+
+.dark .imagen-servicios{
+  width: 25%;
+  filter: invert(0.7);
+}
+
+.texto-servicios{
+    width: 90%;
+    
+    text-align: map-get($estilos, centro );
+    color: map-get($estilos, color )
+}
+
+.btn-servicios{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    a{
+        background-color: map-get($colores, secundario);
+        padding: 1rem;
+        border-radius: 1rem;
+        &:hover{
+            background-color: $secundarioClaro;
+            transition: .2s;
+        }
+    }
+}
+
+.foto-pag-servicios{
+  margin-bottom: 2rem;
+}
+
+
+/*NOSOTROS*/
+
+.nosotros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2.titulo-nosotros{
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.denis{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        width: 50%;
+        border-radius: 20%;
+        -webkit-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.60);
+        -moz-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.60);
+        box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.60);
+    }
+    p{
+        text-align: center;
+        width: 80%;
+        margin: 1rem 0;
+    }
+}
+
+.btn-nosotros{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn{
+    padding: 1rem;
+    background-color: $secundario;
+    border-radius: 1rem;
+    color: black;
+    cursor: pointer;
+    transition: .2s;
+    &:hover{
+        background-color: $secundarioClaro;
+        transition: .2s;
+    }
+}
+
+/*CONTACTO*/
+
+.formulario-contenedor{
+    height: 550px;
+}
+
+.formulario{
+    background-color: #101820;
+    width: 100%;
+    margin: -170px auto;
+    border-radius: 1rem;
+    padding: 2rem;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); 
+    
+    
+  }
+  
+  .formulario fieldset{
+    border: none;
+  }
+
+  @mixin formularios($color,$fsize,$talign) {
+    color: $color;
+    font-size: $fsize;
+    text-align: $talign;
+}
+
+  
+  .formulario legend{
+    @include formularios(white,2rem, center);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  @media (min-width: 768px) { 
+    .formulario legend{font-size: 2.5rem;}
+  .contenedor-campos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  }}
+  
+  .campo:nth-child(3),
+  .campo:nth-child(4){
+    grid-column: 1/3;
+  }
+  
+  .campo{
+  margin-bottom: 1rem;
+  margin: 1rem;
+  
+  }
+  
+  .campo label{
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  
+  }
+  
+  .input-text{
+   width: 100%;
+   border: none;
+   padding: 1.5rem;
+   border-radius: 0.5rem;
+   
+  }
+.contenedor-boton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn--enviar{
+    @extend.btn;
+    background-color: #1b2530;
+    color: white;
+    &:hover{
+        transform: scale(1.1);
+        background-color: rgb(96, 125, 146);
+    }
+}
+
+.mapa iframe{
+    height: 55vh;
+    width: 100%;
+}
+
+
+
+/*LOADER*/
+
+.spinner{
+    border: 4px solid rgba(0,0,0,0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s ease infinite;
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.loader{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eff5f5;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+  .contenedor-mapa{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .mapa{
+    background: white;
+    width: 100%;
+  }
+  h2.encontranos{
+    margin-top: 5rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+.mapa{
+  background-color: #eff5f5 ;
+  background: #eff5f5 ;
+}
+.contenedor-mapa{
+  background-color: #eff5f5 ;
+}
+  
+  @media (max-width: 549px){
+    .texto-servicios{margin: 2rem 0;}
+    h2.titulo-servicios{margin-bottom: 2rem;}
+    .nosotros h2{margin-bottom: 2rem;}
+    .texto-vision, .texto-mision, .texto-valores{margin-bottom: 2rem;}
+  }
+  
+  h2.titulo-nosotros{
+    text-align: center;
+    margin-top: 5rem;
+  }
+  
+  @media (max-width: 600px){
+    h2.titulo-nosotros{
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 30px;
+    }
+  }
+  
+  .formulario-contenedor{
+    height: 500px;
+  }
+  
+  
+
+  header{
+    align-items: center;
+  }
+  
+  .dark-mode{
+    transform: rotateY(180deg);
+  }
+
+/*MEDIAS QUERIES*/
+
+@media(min-width:550px){
+    .logo-contenedores{width: 400px; margin: 0 auto;}
+    .a-header{
+        display: flex;
+      }
+    
+      .a-header img{
+        justify-content: center;
+      }
+  }
+
+  @media (min-width: 601px){
+    .navbar{flex-direction: row;}
+  }
+
+  a.enlace-activo{
+    transform: scale(1.2);
+    color: $secundarioClaro;
+ }
+
+ @media (min-width: 550px){
+    .hero{height: 89.5vh;}
+    .parrafo-hero{font-size: 2.3rem;}
+}
+
+@media (min-width: 550px){
+    .contenedor-servicios{
+      display: flex;
+      flex-direction: row;
+    }
+    .texto-servicios{
+      width: 50%;
+      text-align: initial;
+    }
+    .btn-servicios{
+      padding: 2rem;
+      
+      display: flex;
+      justify-content: flex-end;
+    }
+}
+
+@media (min-width:250px){
+    .img-denis{
+      max-width: 350px;
+    }
+    .denis{
+      margin-top: 2rem;
+    }
+    h4.nombre-denis{
+      font-size: 3rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      text-align: center;
+    }
+  
+   .btn-nosotros{
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .btn-nosotros a{
+      padding: 1rem;
+      background-color: $secundario;
+      border-radius: 1rem;
+      margin-top: 1rem;
+    }
+}
+  
+@media (min-width : 550px){
+    .foto-pag-servicios{
+      width: 400px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      -webkit-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.75);
+       -moz-box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.75);
+       box-shadow: 0px 0px 11px -1px rgba(0,0,0,0.75);
+     }
+}
+
+@media (max-width : 700px){
+    .foto-pag-servicios{width: 330px;}
+  }
+  
+  @media(min-width: 550px){
+  .contenedor-servicios{
+    margin-bottom: 5rem;
+  }}
+
+
+
+  @media(min-width:1200px){
+
+    .texto-nosotros-container{
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    
+    .texto-mision,
+    .texto-vision,
+    .texto-valores{
+        width: 500px;
+        margin: 0 20px;
+        text-align: center;
+    }
+    .texto-mision p,
+    .texto-vision p,
+    .texto-valores p{
+        font-size: 2.3rem;
+    }
+    
+    .texto-mision h3,
+    .texto-vision h3,
+    .texto-valores h3{
+        font-size: 3.4rem;
+        text-align: center;
+    }
+    }
+    
+    @media (min-width: 550px){
+        .texto-servicios p{
+          width: 90%;
+          justify-content: center;
+          margin-left: 5px;
+        }
+        .texto-servicios h3{
+          width: 90%;
+          justify-content: center;
+          margin-left: 5px;
+        }
+        }
+
+        @media (max-width : 600px){
+            header{justify-content: space-between; align-items: center;}
+            .bars__menu{display: block; margin-right: 22px;}
+            img.logo-contenedores{width: 250px;}
+            .menu__desplegable{
+              display: none;
+              transition: ease-in-out .3s;}
+            .activemenu__desplegable{
+             display: block;
+            }
+          }
+
+          @media (max-width: 549px){
+            .texto-servicios{margin: 2rem 0;}
+            h2.titulo-servicios{margin-bottom: 2rem;}
+            .nosotros h2{margin-bottom: 2rem;}
+            .texto-vision, .texto-mision, .texto-valores{margin-bottom: 2rem;}
+          }
+
+          @media (max-width: 600px){
+            h2.nosotross{
+              text-align: center;
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              font-size: 30px;
+            }
+          }
+
+
+    @media(min-width:765px){
+        .formulario{
+            width: 65rem;
+            height: 95%;
+        }
+    }
+
+    @media(min-width:601px){
+    .nosotross{
+      font-size: 4rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+  }
+
+#modo.modo{
+  padding: 2rem 0;
+}
+
+.titulo-servicios{
+  margin-top: 2rem;
+}
+
